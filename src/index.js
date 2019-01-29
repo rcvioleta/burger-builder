@@ -8,13 +8,13 @@ import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import ingredients from './store/reducers/burgerBuilder';
-import order from './store/reducers/order';
+import burgerBuilderReducer from './store/reducers/burgerBuilder';
+import orderReducer from './store/reducers/order';
 
 const composeEnchancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer = combineReducers({
-    ings: ingredients,
-    order: order
+    ings: burgerBuilderReducer,
+    order: orderReducer
 });
 
 const store = createStore(rootReducer, composeEnchancers(
